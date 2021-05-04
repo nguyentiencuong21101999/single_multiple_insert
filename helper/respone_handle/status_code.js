@@ -29,7 +29,10 @@ const statusError = {
 
 const statusUser = {
     //error
-    
+    IdIsNotValid:{
+        code:403,
+        message:"Id is not valid!"
+    }
 
 
 }

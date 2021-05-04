@@ -7,7 +7,7 @@ const port = 3000
 
  require('dotenv').config()
  require("./database/db.mongodb.connection");
- require("./database/db.mariadb.connection");
+ //require("./database/db.mariadb.connection");
 
  const saveRouter = require('./modules/user/user.router')
  app.use("/user", saveRouter)
