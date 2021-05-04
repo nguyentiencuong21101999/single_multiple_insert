@@ -1,11 +1,17 @@
 const config = {
-    url: "mongodb+srv://tiencuong21101999:tiencuong21101999@cluster0.kdn2l.mongodb.net/messenger",
-    url_local:"mongodb://127.0.0.1:27017/api",
+  mongodb: {
+    url: process.env.STRING_URL_LOCAL,
     option: {
-        useNewUrlParser: true,
-        useUnifiedTopology: true
-    }
-
-}
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    },
+  },
+  mariadb:{
+    host: process.env.DB_HOST_LOCAL,
+    user: process.env.DB_USER_LOCAL,
+   // password: process.env.PASSWORD_LOCAL,
+    //database: process.env.DB_DATABASE_LOCAL,
+  }
+};
 
 module.exports = config;

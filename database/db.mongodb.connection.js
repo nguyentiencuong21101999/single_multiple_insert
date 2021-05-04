@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const config = require('./db.config')
-mongoose.connect(config.url_local, config.option)
+mongoose.connect(config.mongodb.url, config.mongodb.option)
 .then( () =>{
     console.log("Mongoose Connected ...");
 })
