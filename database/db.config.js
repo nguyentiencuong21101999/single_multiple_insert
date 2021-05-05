@@ -10,7 +10,7 @@ const config = {
     host: process.env.DB_HOST_LOCAL,
     user: process.env.DB_USER_LOCAL,
    // password: process.env.PASSWORD_LOCAL,
-    //database: process.env.DB_DATABASE_LOCAL,
+    database: process.env.DB_DATABASE_LOCAL,
   }
 };
 

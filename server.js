@@ -7,10 +7,14 @@ const port = 3000
 
  require('dotenv').config()
  require("./database/db.mongodb.connection");
- //require("./database/db.mariadb.connection");
+ require("./database/db.mariadb.connection");
 
- const saveRouter = require('./modules/user/user.router')
- app.use("/user", saveRouter)
+ const userRouter = require('./modules/user/user.router');
+ const userMariadbROuter = require("./modules/user_mariadb/user.router");
+ app.use("/user", userRouter);
+ app.use("/user-mariadb", userMariadbROuter);
+
+
 
  const {handleError} = require("./helper/respone_handle/error_handle")
 
@@ -18,6 +22,6 @@ const port = 3000
  app.use((err, req, res, next) => {
     handleError(err, res)
   });
-app.listen(process.env.PORT, () => {
+app.listen(process.env.PORT,setTimeout(async() => {
   console.log(` app listening at http://localhost:${process.env.PORT}`)
-})
+}),10000)

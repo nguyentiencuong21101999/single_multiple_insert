@@ -32,6 +32,18 @@ const statusUser = {
     IdIsNotValid:{
         code:403,
         message:"Id is not valid!"
+    },
+    DeleteSuccess:{
+        code:200,
+        message:"Delete Success ..."
+    },
+    InsertSuccess:{
+        code:200,
+        message:"Insert Success ..."
+    },
+    UpdateSuccess:{
+        code:200,
+        message:"Update Success ..."
     }
 
 

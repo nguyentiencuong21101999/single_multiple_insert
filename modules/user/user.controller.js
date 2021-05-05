@@ -2,6 +2,7 @@ const { successResponse } = require("../../helper/respone_handle/success_handle"
 const userModel = require("./user.model");
 const { statusUser } = require('../../helper/respone_handle/status_code');
 const { ErrorHandler } = require("../../helper/respone_handle/error_handle");
+const {messageSuccessResponse} = require("../../helper/respone_handle/success_handle")
 exports.insert = async (req, res, next) => {
     const { email, password } = req.body;
 
@@ -30,7 +31,7 @@ exports.delete = async (req, res, next) => {
         if (!results) {
             res.json(new ErrorHandler(statusUser.IdIsNotValid))
         }
-        res.json(new successResponse(results));
+        res.json(new messageSuccessResponse(statusUser.DeleteSuccess));
     } catch (error) {
         next(error)
     }
@@ -40,6 +41,7 @@ exports.delete = async (req, res, next) => {
 exports.getUser = async (req, res, next) => {
     try {
         const results = await userModel.getUser();
+        
         res.json(new successResponse(results));
     } catch (error) {
         next(error)
