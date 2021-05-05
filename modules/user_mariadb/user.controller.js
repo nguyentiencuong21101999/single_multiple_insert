@@ -6,9 +6,13 @@ const {
 } = require("../../helper/respone_handle/success_handle");
 const userModel = require("./user.model");
 
+const checkEmailExisted
+
 exports.insert = async (req, res, next) => {
   const { email, password } = req.body;
   try {
+    const statusCheck = await
+    
     const results = await userModel.insert(email, password);
     if (results) {
       res.json(new messageSuccessResponse(statusUser.InsertSuccess));
