@@ -64,6 +64,9 @@ app.get("/test2", async(req, res, next) => {
     const url_query = `insert into user(email,password) values  ${val}`;
     const results = await query.queryProc(url_query);
     console.log(results);
+    if(results.affectedRows > 0){
+      console.log("success");
+    }
    
   } catch (error) {
     console.log(error);
