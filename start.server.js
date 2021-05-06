@@ -11,62 +11,61 @@ module.exports = async function initConnection(callback) {
   try {
     const result =  await mairiadbConnect();
     console.log("mariaDB conneted ...");
-  } catch (error) {
+  } catch (e) {
     console.error(e)
   }
-
   callback();
 };
 
-user: {
-  userId primary key
-  phoneNumber unique
-  email: unique
-  username
-}
+// user: {
+//   userId primary key
+//   phoneNumber unique
+//   email: unique
+//   username
+// }
 
-authorization: {
-  password binary
-  salt binary
-  userId primary key
-}
+// authorization: {
+//   password binary
+//   salt binary
+//   userId primary key
+// }
 
-token: {
-  payload: {
-    userId: "abc",
-    phoneNumber: "",
-    email
-  }
-}
+// token: {
+//   payload: {
+//     userId: "abc",
+//     phoneNumber: "",
+//     email
+//   }
+// }
 
-class Payload {
+// class Payload {
 
-  this.username = {
-    value: "",
-    validation: ['isEmpty', 'isString', 'isUsername']
-  }
+//   this.username = {
+//     value: "",
+//     validation: ['isEmpty', 'isString', 'isUsername']
+//   }
 
-  this.phoneNumber = {
-    value: "",
-    validation: []
-  }
+//   this.phoneNumber = {
+//     value: "",
+//     validation: []
+//   }
 
-  setUesrname(value)
+//   setUesrname(value)
 
-}
+// }
 
-class validation {
+// class validation {
 
-  isEmpty => true empty false value (! null, ! "", ! undefined)
-  isString
+//   isEmpty => true empty false value (! null, ! "", ! undefined)
+//   isString
 
-  isNumber
+//   isNumber
 
-  isUsername(value) {
-    const result = RegExp('')
-    result.test(value)
+//   isUsername(value) {
+//     const result = RegExp('')
+//     result.test(value)
 
-  }
-  isPhoneNumber
+//   }
+//   isPhoneNumber
 
-}
+// }

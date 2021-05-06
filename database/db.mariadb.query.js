@@ -1,7 +1,8 @@
 const mysql = require("mysql");
 const config = require("../database/db.config");
 const connection = mysql.createConnection(config.mariadb);
-
+// const mariadb = require("mariadb");
+// const connection = mariadb.createPool(config.pollConnection)
 const querySql = (strQuery, callback) => {
     return connection.query(strQuery, callback);
 }

@@ -4,6 +4,7 @@ const users = {};
 users.insert = async (email, password) => {
   const url_query = `insert into user(email,password) values ('${email}','${password}')`;
   const results = await procedure.queryProc(url_query);
+  console.log(results);
   return results;
 };
 users.update = async (id, email, password) => {

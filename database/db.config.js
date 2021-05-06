@@ -11,6 +11,13 @@ const config = {
     user: process.env.DB_USER_LOCAL,
    // password: process.env.PASSWORD_LOCAL,
     database: process.env.DB_DATABASE_LOCAL,
+  },
+  pollConnection:{
+    host: process.env.DB_HOST_LOCAL,
+    user: process.env.DB_USER_LOCAL,
+   // password: process.env.PASSWORD_LOCAL,
+    database: process.env.DB_DATABASE_LOCAL,
+    connectionLimit: 5
   }
 };
 
